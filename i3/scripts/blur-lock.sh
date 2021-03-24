@@ -1,12 +1,3 @@
 #!/usr/bin/env bash
 
-PICTURE=/tmp/i3lock.png
-SCREENSHOT="scrot $PICTURE"
-
-BLUR="5x4"
-
-$SCREENSHOT
-convert $PICTURE -blur $BLUR $PICTURE
-betterlockscreen -u $PICTURE
-betterlockscreen -l
-rm $PICTURE
+i3lock-fancy -t ""
