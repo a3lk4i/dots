@@ -1,0 +1,12 @@
+[user]
+name = a3lk4i
+email = akhil.kavuri@protonmail.com
+
+[credential]
+helper = store
+
+[core]
+editor = vim
+
+[includeIf "gitdir:~/Documents/Work"]
+path = .gitconfig-eg
