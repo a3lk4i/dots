@@ -21,7 +21,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:JetBrains Mono Regular 10
+font pango:Monospace Regular 10
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -354,14 +354,15 @@ for_window [class="Pamac-manager"] floating enable
 set $darkbluetrans	#08052be6
 set $darkblue		#08052b
 set $lightblue		#5294e2
-set $urgentred		#e53935
+set $urgentred		#ff7f7f
 set $white		#ffffff
 set $black		#000000
 set $purple		#e345ff
-set $darkgrey		#383c4a
+set $darkgrey		#08052b
 set $grey		#b0b5bd
 set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
+set $eos-red		#ff7f7f
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
@@ -378,7 +379,7 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 # Start i3bar to display a workspace bar 
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango:JetBrains Mono Regular 12, FontAwesome 10
+		font pango:Monospace Regular 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position top
 #	    	i3bar_command i3bar --transparency
@@ -389,7 +390,7 @@ bar {
 		    background         $darkgrey
 		    statusline         $white
 #                          		border 		        bg		txt		indicator
-		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+		focused_workspace	$darkgrey	   		$darkgrey	$eos-red	$purple
 		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
 		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
 		urgent_workspace	$urgentred	    	$urgentred	$white		$purple 
