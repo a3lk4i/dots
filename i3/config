@@ -268,6 +268,7 @@ assign [class="Xfce4-terminal"] $ws1
 assign [class="jetbrains-pycharm-ce"] $ws2
 assign [class="(?i)firefox"] $ws3
 assign [class="Slack"] $ws4
+assign [class="Signal"] $ws4
 assign [class="zoom"] $ws6
 assign [class="Lens"] $ws7
 
@@ -275,6 +276,7 @@ for_window [class="Spotify"] move --no-auto-back-and-forth container to workspac
 
 for_window [workspace=$ws2] layout tabbed
 for_window [workspace=$ws3] layout tabbed
+for_window [workspace=$ws4] layout tabbed
 for_window [workspace=$ws6] layout tabbed
 
 
