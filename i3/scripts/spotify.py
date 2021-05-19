@@ -24,8 +24,8 @@ try:
     display_value = f' {str(props["xesam:artist"][0])} - {str(props["xesam:title"])}'
     display_value = display_value.replace('&', 'n')
     if len(display_value) > 35:
-        display_value = f'{display_value[:32]}...' 
+        display_value = f'{display_value[:32]}...'
     print(display_value)
 except dbus.exceptions.DBusException:
-    print('-')
+    print(' Off ')
 
