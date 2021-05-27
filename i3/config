@@ -370,10 +370,10 @@ set $eos-red		#ff7f7f
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
-client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
-client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
+client.focused		    $lightblue	$darkblue	$white		$eos-red	$mediumgrey
+client.unfocused	    $darkblue	$darkblue	$grey		$eos-red	$darkgrey
+client.focused_inactive	$darkblue	$darkblue	$grey		$eos-red	$black
+client.urgent		    $urgentred	$urgentred	$white		$eos-red	$yellowbrown
 
 
 ############################################
@@ -385,19 +385,18 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 bar {
 		font pango:JetBrains Mono Regular 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	position top
-#	    	i3bar_command i3bar --transparency
-		    tray_output primary
-		    tray_padding 0
-		    colors {
+	    position top
+		tray_output primary
+		tray_padding 0
+		colors {
 		    separator          $purple
 		    background         $darkgrey
 		    statusline         $white
-#                          		border 		        bg		txt		indicator
-		focused_workspace	$darkgrey	   		$darkgrey	$eos-red	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple 
+#           workspace   		border		bg			txt			indicator
+			focused_workspace	$darkgrey	$darkgrey	$eos-red	$purple
+			active_workspace	$lightblue	$mediumgrey	$darkgrey	$purple
+			inactive_workspace	$darkgrey 	$darkgrey	$grey		$purple
+			urgent_workspace	$urgentred	$urgentred	$white		$purple 
 	}
 }
 
