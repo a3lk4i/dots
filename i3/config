@@ -21,7 +21,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Monospace Regular 10
+font pango:JetBrains Mono Regular 11
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -244,15 +244,14 @@ bindsym $mod+n exec /usr/bin/thunar
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 " 1  "
+set $ws1 " 1  "
 set $ws2 " 2  "
 set $ws3 " 3  "
 set $ws4 " 4  "
-set $ws5 " 5  "
-set $ws6 " 6  "
-set $ws7 " 7 ☸ "
-set $ws8 " 8  "
-set $ws9 " 9 * "
+set $ws5 " 5  "
+set $ws6 " 6 ☸ "
+set $ws7 " 7  "
+set $ws8 " 8  "
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays 
@@ -271,16 +270,16 @@ assign [class="(?i)firefox"] $ws3
 assign [class="Slack"] $ws4
 assign [class="Signal"] $ws4
 assign [class="discord"] $ws4
-assign [class="zoom"] $ws6
-assign [class="Lens"] $ws7
-assign [class="(?i)Nautilus"] $ws8
+assign [class="zoom"] $ws5
+assign [class="Lens"] $ws6
+assign [class="(?i)Nautilus"] $ws7
 
-for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws5
+for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws8
 
 for_window [workspace=$ws2] layout tabbed
 for_window [workspace=$ws3] layout tabbed
 for_window [workspace=$ws4] layout tabbed
-for_window [workspace=$ws6] layout tabbed
+for_window [workspace=$ws5] layout tabbed
 
 
 # automatic set focus new window if it opens on another workspace then the current:
@@ -324,8 +323,8 @@ exec --no-startup-id picom -CGb
 exec --no-startup-id nm-applet
 
 # set wallpaper
-exec --no-startup-id nitrogen --restore
-#exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
+exec --no-startup-id sh /home/a3l/.fehbg
+
 
 #set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
