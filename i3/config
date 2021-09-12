@@ -349,31 +349,32 @@ for_window [class="qt5ct" instance="qt5ct"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="Pamac-manager"] floating enable
+for_window [class="Gpick"] floating enable
+
 
 ######################################
 # color settings for bar and windows #
 ######################################
  
 # Define colors variables: 
-set $darkbluetrans	#08052be6
-set $darkblue		#08052b
-set $lightblue		#5294e2
-set $urgentred		#ff7f7f
-set $white		#ffffff
-set $black		#000000
-set $purple		#e345ff
-set $darkgrey		#08052b
-set $grey		#b0b5bd
-set $mediumgrey		#8b8b8b
-set $yellowbrown	#e1b700
-set $eos-red		#ff7f7f
+set $darkblue		#9AB8D7
+set $lightblue		#94BFF3
+set $urgentred		#DCA3A3
+set $white			#FFFFFF
+set $black			#000000
+set $purple			#EC93D3
+set $darkgrey		#3F3F3F
+set $grey			#DCDCDC
+set $mediumgrey		#8B8B8B
+set $yellowbrown	#DFAF8F
+set $eos-red		#DCA3A3
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkblue	$white		$eos-red	$mediumgrey
-client.unfocused	    $darkblue	$darkblue	$grey		$eos-red	$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$eos-red	$black
-client.urgent		    $urgentred	$urgentred	$white		$eos-red	$yellowbrown
+client.focused		    $lightblue	$lightblue	$black		$eos-red	$mediumgrey
+client.unfocused	    $darkblue	$darkblue	$darkgrey	$eos-red	$darkgrey
+client.focused_inactive	$darkblue	$darkblue	$darkgrey	$eos-red	$black
+client.urgent		    $urgentred	$urgentred	$darkgrey	$eos-red	$yellowbrown
 
 
 ############################################
