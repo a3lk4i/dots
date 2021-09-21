@@ -5,7 +5,7 @@
 * {
     red:                         #DCA3A3;
     selected-active-foreground:  var(background);
-    lightfg:                     #94BFF3;
+    lightfg:                     #9AB8D7;
     separatorcolor:              var(foreground);
     urgent-foreground:           var(red);
     alternate-urgent-background: var(lightbg);
