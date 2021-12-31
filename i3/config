@@ -326,9 +326,11 @@ exec --no-startup-id nm-applet
 # set wallpaper
 exec --no-startup-id sh /home/a3l/.fehbg
 
-
-#set powersavings for display:
+# set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
+
+# set pointer props:
+exec --no-startup-id xinput set-prop 'Logitech G102 LIGHTSYNC Gaming Mouse' 'libinput Accel Speed' -0.5
 
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
