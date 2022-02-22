@@ -46,7 +46,7 @@ workspace_layout default
 ##############################
 
 #border indicator on windows: 
-new_window pixel 1
+new_window pixel 2
 
 # thin borders
 # hide_edge_borders both
@@ -375,7 +375,7 @@ set $eos-red		#DCA3A3
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$lightblue	$black		$eos-red	$mediumgrey
+client.focused		    $lightblue	$lightblue	$black		$eos-red	$darkblue
 client.unfocused	    $darkblue	$darkblue	$darkgrey	$eos-red	$darkgrey
 client.focused_inactive	$darkblue	$darkblue	$darkgrey	$eos-red	$black
 client.urgent		    $urgentred	$urgentred	$darkgrey	$eos-red	$yellowbrown
@@ -404,30 +404,6 @@ bar {
 			urgent_workspace	$urgentred	$urgentred	$white		$purple 
 	}
 }
-
-# you can add different bars for multidisplay setups on each display:
-# set output HDMI-0 to the display you want the bar, --transparency can be set.
-# Transparency needs rgba color codes to be used where the last two letters are the transparency factor see here:
-# https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-# #08052be6 --> e6=90%
-
-# bar {	
-#	font pango:Noto Sans Regular 9, FontAwesome 9
-#	status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#	i3bar_command i3bar --transparency
-#	output HDMI-0
-#	position bottom
-#	colors {
-#		separator          $purple
-#		background         $darkbluetrans
-#        	statusline         $white
-#					border		bg		txt		indicator
-#		focused_workspace	$lighterblue	$lighterblue	$darkblue	$purple
-#		active_workspace	$lightdblue	$lightdblue	$darkblue	$purple
-#		inactive_workspace	$darkblue	$darkblue	$lightdblue	$purple
-#		urgent_workspace	$urgentred	$urgentred	$white		$purple 
-#	}
-#}
 
 #####################################
 # Application menu handled by rofi: #
