@@ -1,0 +1,54 @@
+
+window:
+  padding:
+    x: 15
+    y: 15
+  opacity: 1.0
+
+font:
+  normal:
+    family: JetBrains Mono
+    style: Regular
+
+  bold:
+    family: JetBrains Mono
+    style: Bold
+
+  italic:
+    family: JetBrains Mono
+    style: Italic
+
+  bold_italic:
+    family: JetBrains Mono
+    style: Bold Italic
+
+  size: 12
+
+colors:
+  primary:
+    background: '#2E2E2E'
+    foreground: '#DCDCDC'
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xffffff'
+    cursor: '#8B8B8B'
+  # Normal colors
+  normal:
+    black:   '#3F3F3F'
+    red:     '#FF7F7F'
+    green:   '#60B48A'
+    yellow:  '#DFAF8F'
+    blue:    '#9AB8D7'
+    magenta: '#DC8CC3'
+    cyan:    '#8CD0D3'
+    white:   '#DCDCDC'
+  # Bright colors
+  bright:
+    black:   '#8B8B8B'
+    red:     '#DCA3A3'
+    green:   '#72D5A3'
+    yellow:  '#F0DFAF'
+    blue:    '#94BFF3'
+    magenta: '#EC93D3'
+    cyan:    '#93E0E3'
+    white:   '#FFFFFF'
