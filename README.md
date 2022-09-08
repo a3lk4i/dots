@@ -1,7 +1,6 @@
-dotfiles
-========
+# dots
 
-# On a new machine
+## OS X
 
 ```
 # install all brew dependencies
