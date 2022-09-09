@@ -18,10 +18,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go'
-Plug 'fatih/vim-hclfmt'
-Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
 Plug 'godlygeek/tabular'
-Plug 'hashivim/vim-hashicorp-tools'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
@@ -36,10 +33,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-scriptease'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
 Plug 'tyru/open-browser.vim'
 Plug 'dag/vim-fish'
 
@@ -143,16 +138,13 @@ augroup filetypedetect
 
   autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
   autocmd BufNewFile,BufRead .nginx.conf*,nginx.conf* setf nginx
-  autocmd BufNewFile,BufRead *.hcl setf conf
 
   autocmd BufRead,BufNewFile *.gotmpl set filetype=gotexttmpl
 
-  autocmd BufNewFile,BufRead *.ino setlocal noet ts=4 sw=4 sts=4
   autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
   autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
   autocmd BufNewFile,BufRead *.html setlocal noet ts=4 sw=4
   autocmd BufNewFile,BufRead *.vim setlocal expandtab shiftwidth=2 tabstop=2
-  autocmd BufNewFile,BufRead *.hcl setlocal expandtab shiftwidth=2 tabstop=2
   autocmd BufNewFile,BufRead *.sh setlocal expandtab shiftwidth=2 tabstop=2
   autocmd BufNewFile,BufRead *.proto setlocal expandtab shiftwidth=2 tabstop=2
   autocmd BufNewFile,BufRead *.fish setlocal expandtab shiftwidth=2 tabstop=2
@@ -160,7 +152,6 @@ augroup filetypedetect
   autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
   autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2
   autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
-  autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 augroup END
 
 "=====================================================
@@ -469,66 +460,6 @@ let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_no_extensions_in_markdown = 1
-
-" create a hugo front matter in toml format to the beginning of a file. Open
-" empty markdown file, i.e: '2018-02-05-speed-up-vim.markdown'. Calling this
-" function will generate the following front matter under the cursor:
-"
-"   +++
-"   author = "Akhil Kavuri"
-"   date = 2018-02-03 08:41:20
-"   title = "Speed up vim"
-"   slug = "speed-up-vim"
-"   url = "/2018/02/03/speed-up-vim/"
-"   featured_image = ""
-"   description =  ""
-"   +++
-"
-function! s:create_front_matter()
-  let fm = ["+++"]
-  call add(fm, 'author = "Akhil Kavuri"')
-  call add(fm, printf("date = \"%s\"", strftime("%Y-%m-%d %X")))
-
-  let filename = expand("%:r")
-  let tl = split(filename, "-")
-  " in case the file is in form of foo.md instead of
-  " year-month-day-foo.markdown
-  if !empty(str2nr(tl[0]))
-    let tl = split(filename, "-")[3:]
-  endif
-
-  let title = join(tl, " ")
-  let title = toupper(title[0]) . title[1:]
-  call add(fm, printf("title = \"%s\"", title))
-
-  let slug = join(tl, "-")
-  call add(fm, printf("slug = \"%s\"", slug))
-  call add(fm, printf("url = \"%s/%s/\"", strftime("%Y/%m/%d"), slug))
-
-  call add(fm, 'featured_image = ""')
-  call add(fm, 'description = ""')
-  call add(fm, "+++")
-  call append(0, fm)
-endfunction
-
-" create a shortcode that inserts an image holder with caption or class
-" attribute that defines on how to set the layout.
-function! s:create_figure()
-  let fig = ["{{< figure"]
-  call add(fig, 'src="/images/image.jpg"')
-  call add(fig, 'class="left"')
-  call add(fig, 'caption="This looks good!"')
-  call add(fig, ">}}")
-
-  let res = [join(fig, " ")]
-  call append(line("."), res)
-endfunction
-
-augroup md
-  autocmd!
-  autocmd Filetype markdown command! -bang HugoFrontMatter call <SID>create_front_matter()
-  autocmd Filetype markdown command! -bang HugoFig call <SID>create_figure()
-augroup END
 
 " ==================== vim-json ====================
 let g:vim_json_syntax_conceal = 0
