@@ -51,3 +51,7 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[includeIf "gitdir:~/Documents/work/"]
+	path = ~/.gitconfig-work
+
+
