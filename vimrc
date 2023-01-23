@@ -1,8 +1,4 @@
 " I use the same vimrc for both nvim and vim
-if &shell =~# 'fish$'
-    set shell=sh
-endif
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
@@ -36,7 +32,6 @@ Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
-Plug 'dag/vim-fish'
 
 call plug#end()
 
@@ -147,7 +142,6 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.vim setlocal expandtab shiftwidth=2 tabstop=2
   autocmd BufNewFile,BufRead *.sh setlocal expandtab shiftwidth=2 tabstop=2
   autocmd BufNewFile,BufRead *.proto setlocal expandtab shiftwidth=2 tabstop=2
-  autocmd BufNewFile,BufRead *.fish setlocal expandtab shiftwidth=2 tabstop=2
 
   autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
   autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2

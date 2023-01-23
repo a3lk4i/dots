@@ -2,13 +2,12 @@ all: sync
 
 sync:
 	mkdir -p ~/.config/alacritty
-	mkdir -p ~/.config/fish
 	mkdir -p ~/.tmux/
 
 	[ -f ~/.config/alacritty/alacritty.yml ] || ln -s $(PWD)/alacritty.yml ~/.config/alacritty/alacritty.yml
 	[ -f ~/.config/alacritty/color.yml ] || ln -s $(PWD)/color.yml ~/.config/alacritty/color.yml
-	[ -f ~/.config/fish/config.fish ] || ln -s $(PWD)/config.fish ~/.config/fish/config.fish
-	[ -d ~/.config/fish/functions/ ] || ln -s $(PWD)/fish/functions ~/.config/fish/functions
+	[ -f ~/.zshrc ] || ln -s $(PWD)/.zshrc ~/.zshrc
+	[ -f ~/.p10k.zsh ] || ln -s $(PWD)/.p10k.zsh ~/.p10k.zsh
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmuxconf ~/.tmux.conf
 	[ -f ~/.tmux/tmux-dark.conf ] || ln -s $(PWD)/tmux-dark.conf ~/.tmux/tmux-dark.conf
@@ -22,11 +21,11 @@ sync:
 	touch ~/.hushlogin
 
 clean:
+	rm -f ~/.zshrc
+	rm -f ~/.p10k.zsh
 	rm -f ~/.vimrc 
 	rm -f ~/.config/alacritty/alacritty.yml
 	rm -f ~/.config/alacritty/color.yml
-	rm -f ~/.config/fish/config.fish
-	rm -rf ~/.config/fish/functions/
 	rm -f ~/.tmux.conf
 	rm -f ~/.tigrc
 	rm -f ~/.gitconfig
