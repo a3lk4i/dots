@@ -115,9 +115,12 @@ alias k="kubectl"
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.linkerd2/bin:$PATH"
+export EDITOR="vim"
+export GOPRIVATE="github.expedia.biz"
 
 eval $(thefuck --alias tf)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+source /Users/akavuri/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
