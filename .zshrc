@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="refined"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-autosuggestions: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-plugins=(aws brew docker git golang kubectl macos zsh-autosuggestions)
+plugins=(git golang kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,6 +115,7 @@ alias k="kubectl"
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.linkerd2/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export EDITOR="vim"
 export GOPRIVATE="github.expedia.biz"
 
