@@ -9,7 +9,7 @@ sync:
 	[ -f ~/.tigrc ] || ln -s $(PWD)/tigrc ~/.tigrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
 	[ -f ~/.agignore ] || ln -s $(PWD)/agignore ~/.agignore
-	[ -f ~/.config/nvim/custom ] || ln -s $(PWD)/nvchad/custom ~/.config/nvim/custom
+	[ -f ~/.config/nvim/custom ] || ln -s $(PWD)/nvchad/custom ~/.config/nvim/lua/custom
 
 	# don't show last login message
 	touch ~/.hushlogin
@@ -21,6 +21,6 @@ clean:
 	rm -f ~/.tigrc
 	rm -f ~/.gitconfig
 	rm -f ~/.agignore
-	rm -rf ~/.config/nvim/custom
+	rm -rf ~/.config/nvim/lua/custom
 
 .PHONY: all clean sync 
