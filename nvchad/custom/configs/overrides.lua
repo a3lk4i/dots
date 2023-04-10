@@ -31,12 +31,14 @@ M.mason = {
 
     --- go
     "gopls",
-    "go-debug-adaptor",
+    "go-debug-adapter",
     "gofumpt",
     "goimports",
     "golines",
     "gomodifytags",
-    "gotests"
+    "gotests",
+    "impl",
+    "staticcheck",
   },
 }
 

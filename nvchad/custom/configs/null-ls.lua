@@ -9,6 +9,16 @@ local b = null_ls.builtins
 local sources = {
   -- Lua
   b.formatting.stylua,
+
+  -- Proto
+  b.diagnostics.buf,
+  b.formatting.buf,
+
+  -- Go
+  b.formatting.gofumpt,
+  b.formatting.goimports,
+  b.code_actions.gomodifytags,
+
 }
 
 null_ls.setup {
