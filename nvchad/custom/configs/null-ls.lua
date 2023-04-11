@@ -15,6 +15,8 @@ local sources = {
   b.formatting.buf,
 
   -- Go
+  b.diagnostics.revive,
+  b.formatting.golines,
   b.formatting.gofumpt,
   b.formatting.goimports,
   b.code_actions.gomodifytags,
@@ -22,6 +24,6 @@ local sources = {
 }
 
 null_ls.setup {
-  debug = true,
+  debug = false,
   sources = sources,
 }

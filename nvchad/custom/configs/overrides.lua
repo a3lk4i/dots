@@ -38,7 +38,7 @@ M.mason = {
     "gomodifytags",
     "gotests",
     "impl",
-    "staticcheck",
+    "revive",
   },
 }
 
