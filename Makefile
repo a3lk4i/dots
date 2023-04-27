@@ -1,4 +1,4 @@
-all: sync
+all: clean sync
 
 sync:
 	mkdir -p ~/.config/alacritty
@@ -9,7 +9,7 @@ sync:
 	[ -f ~/.tigrc ] || ln -s $(PWD)/tigrc ~/.tigrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
 	[ -f ~/.agignore ] || ln -s $(PWD)/agignore ~/.agignore
-	[ -f ~/.config/nvim/custom ] || ln -s $(PWD)/nvchad/custom ~/.config/nvim/lua/custom
+	[ -f ~/.config/nvim ] || ln -s $(PWD)/nvim ~/.config/nvim
 
 	# don't show last login message
 	touch ~/.hushlogin
@@ -21,6 +21,6 @@ clean:
 	rm -f ~/.tigrc
 	rm -f ~/.gitconfig
 	rm -f ~/.agignore
-	rm -rf ~/.config/nvim/lua/custom
+	rm -rf ~/.config/nvim
 
 .PHONY: all clean sync 
