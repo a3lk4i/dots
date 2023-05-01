@@ -9,9 +9,14 @@ return {
           nls.builtins.formatting.prettierd,
           -- aws cfn
           nls.builtins.diagnostics.cfn_lint,
+          -- proto | buf.build
+          nls.builtins.diagnostics.buf,
+          nls.builtins.formatting.buf,
           -- yaml
           nls.builtins.diagnostics.yamllint,
+          -- lua
           nls.builtins.formatting.stylua,
+          -- shell
           nls.builtins.formatting.shfmt,
         },
       }

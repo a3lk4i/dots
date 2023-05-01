@@ -3,8 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
       opts.servers = {
-        gopls = {},
-        jsonls = {},
+        bufls = {},
         lua_ls = {
           settings = {
             Lua = {
@@ -17,6 +16,18 @@ return {
             },
           },
         },
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                autopep8 = {
+                  enabled = false,
+                },
+              },
+            },
+          },
+        },
+        rome = {},
       }
     end,
   },
