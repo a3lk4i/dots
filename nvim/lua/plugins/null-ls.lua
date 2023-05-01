@@ -12,8 +12,6 @@ return {
           -- proto | buf.build
           nls.builtins.diagnostics.buf,
           nls.builtins.formatting.buf,
-          -- yaml
-          nls.builtins.diagnostics.yamllint,
           -- lua
           nls.builtins.formatting.stylua,
           -- shell
