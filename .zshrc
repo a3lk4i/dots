@@ -125,4 +125,3 @@ eval $(thefuck --alias tf)
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-source /Users/akavuri/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
