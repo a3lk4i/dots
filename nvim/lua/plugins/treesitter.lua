@@ -4,7 +4,6 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = {
         "bash",
-        "go",
         "html",
         "json",
         "lua",
