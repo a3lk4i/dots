@@ -3,13 +3,20 @@ local M = {}
 M.treesitter = {
   ensure_installed = {
     "vim",
-    "bash",
-    "dockerfile",
-    "gitignore",
+    -- buf start
+    "proto",
+    -- buf end
+    -- go start
     "go",
     "gomod",
     "gosum",
     "gowork",
+    -- go end
+    --
+    -- misc start
+    "bash",
+    "dockerfile",
+    "gitignore",
     "json",
     "latex",
     "lua",
@@ -17,11 +24,11 @@ M.treesitter = {
     "make",
     "markdown",
     "markdown_inline",
-    "proto",
     "regex",
     "sql",
     "toml",
     "yaml",
+    -- misc end
   },
   indent = {
     enable = true,
@@ -30,25 +37,34 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
-    -- lua 
-    "lua-language-server",
-    "stylua",
-
-    -- misc
-    "html-lsp",
-    "rome",
-    "actionlint",
-    "cfn-lint",
-
     -- buf.build for protocol buffers
     "buf",
     "buf-language-server",
+    -- buf.build end
 
-    -- shell
+    -- go start
+    "gopls",
+    "golangci-lint-langserver",
+    "gomodifytags",
+    "gofumpt",
+    "iferr",
+    "impl",
+    "goimports-reviser",
+    -- go end
+
+    -- lua start
+    "lua-language-server",
+    "stylua",
+    -- lua end
+
+    -- misc start
+    "actionlint",
+    "cfn-lint",
+    "html-lsp",
+    "rome",
     "shellcheck",
-
-    -- yaml
     "yq",
+    -- misc end
   },
 }
 

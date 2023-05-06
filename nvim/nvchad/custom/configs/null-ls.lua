@@ -8,20 +8,26 @@ local b = null_ls.builtins
 
 local sources = {
 
-  -- misc
-  b.formatting.rome.with { filetypes = { "html", "json", "markdown" } },
+  -- misc start
   b.diagnostics.actionlint,
   b.diagnostics.cfn_lint,
-
-  -- Lua
+  b.formatting.rome.with { filetypes = { "html", "json", "markdown" } },
+  b.diagnostics.shellcheck,
   b.formatting.stylua,
+  -- misc end
 
-  -- buf.build for protocol buffers
+  -- go start
+  b.code_actions.gomodifytags,
+  b.code_actions.impl,
+
+  b.formatting.gofumpt,
+  b.formatting.goimports_reviser,
+  -- go end
+
+  -- proto | buf.build star
   b.diagnostics.buf,
   b.formatting.buf,
-
-  -- shell
-  b.diagnostics.shellcheck,
+  -- proto | buf.build end
 }
 
 null_ls.setup {

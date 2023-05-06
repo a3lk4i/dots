@@ -65,8 +65,6 @@ local plugins = {
   { import = "custom.configs.extras.symbols-outline" },
   { import = "custom.configs.extras.trouble" },
   { import = "custom.configs.extras.diffview" },
-
-  { import = "custom.configs.extras.lang.go" },
 }
 
 return plugins
