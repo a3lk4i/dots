@@ -1,9 +1,22 @@
-local overrides = require("custom.configs.overrides")
+local plugings = {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = require("custom.configs.treesitter").ensure_installed
+    }
+  },
 
----@type NvPluginSpec[]
-local plugins = {
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = require("custom.configs.nvimtree"),
+  },
 
-  -- Override plugin definition options
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = require("custom.configs.mason").ensure_installed
+    }
+  },
 
   {
     "neovim/nvim-lspconfig",
@@ -17,54 +30,21 @@ local plugins = {
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-    end, -- Override to setup mason-lspconfig
-  },
-
-  -- override plugin configs
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
+    end
   },
 
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
+    "folke/trouble.nvim",
+    cmd = {"Trouble", "TroubleToggle"},
+    config = true, -- Todo: change when base46 has colors? for this
   },
 
   {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
-
-  -- Install a plugin
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
-
-  -- To use a extras plugin
-  { import = "custom.configs.extras.symbols-outline" },
-  { import = "custom.configs.extras.trouble" },
-  { import = "custom.configs.extras.diffview" },
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+    config = true,
+  }
 }
-
-return plugins
+return plugings
