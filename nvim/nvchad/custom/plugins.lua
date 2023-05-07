@@ -45,6 +45,15 @@ local plugings = {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
     config = true,
-  }
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    ft = "markdown",
+    config = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+
 }
 return plugings
