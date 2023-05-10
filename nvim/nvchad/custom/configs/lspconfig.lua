@@ -69,3 +69,21 @@ lspconfig.gopls.setup{
 -- proto
 lspconfig.bufls.setup{on_attach = on_attach, capabilities = capabilities}
 
+-- python
+lspconfig.pylsp.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    pylsp = {
+      plugins = {
+        autopep8 = {
+          enabled = false,
+        },
+      },
+    },
+  },
+}
+
+-- misc
+lspconfig.rome.setup{on_attach = on_attach, capabilities = capabilities}
+

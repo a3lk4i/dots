@@ -28,6 +28,12 @@ local plugings = {
           require "custom.configs.null-ls"
         end,
       },
+      {
+        "williamboman/mason-lspconfig.nvim",
+        opts = {
+          ensure_installed = require("custom.configs.mason").ensure_installed_lsp
+        }
+      }
     },
     config = function()
       require("plugins.configs.lspconfig")

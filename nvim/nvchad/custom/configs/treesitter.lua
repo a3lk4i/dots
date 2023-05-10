@@ -9,6 +9,8 @@ M.ensure_installed = {
   "gowork",
   -- proto
   "proto",
+  -- python
+  "python",
   -- misc
   "bash",
   "dockerfile",
