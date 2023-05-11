@@ -48,6 +48,7 @@ local plugins = {
     end,
   },
 
-  { import = "custom.configs.go.plugins", }
+  { import = "custom.configs.go.plugins", },
+  { import = "custom.configs.markdown.plugins", }
 }
 return plugins
