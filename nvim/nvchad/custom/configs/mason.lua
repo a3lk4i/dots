@@ -1,35 +1,12 @@
 local M = {}
-
 M.ensure_installed = {
   -- go
-  "gomodifytags",
+  "gopls",
   "goimports-reviser",
   "gofumpt",
+  "golines",
   "iferr",
   "impl",
-  -- proto
-  "buf",
-  -- python
-  "ruff",
-  "yapf",
-  -- misc
-  "actionlint",
-  "cfn-lint",
-  "html-lsp",
-  "shellcheck",
-  "yq",
+  "gomodifytags",
 }
-
-M.ensure_installed_lsp = {
-  -- go
-  "gopls",
-  "golangci_lint_ls",
-  -- proto
-  "bufls",
-  -- python
-  "pylsp",
-  --misc
-  "rome"
-}
-
 return M

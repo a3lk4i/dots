@@ -1,4 +1,4 @@
-local plugings = {
+local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -7,44 +7,16 @@ local plugings = {
   },
 
   {
-    "nvim-tree/nvim-tree.lua",
-    opts = require("custom.configs.nvimtree"),
-  },
-
-  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = require("custom.configs.mason").ensure_installed
-    }
-  },
-
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
-      {
-        "williamboman/mason-lspconfig.nvim",
-        opts = {
-          ensure_installed = require("custom.configs.mason").ensure_installed_lsp
-        }
-      }
     },
-    config = function()
-      require("plugins.configs.lspconfig")
-      require("custom.configs.lspconfig")
-    end
   },
 
   {
     "folke/trouble.nvim",
     cmd = {"Trouble", "TroubleToggle"},
-    config = true, -- Todo: change when base46 has colors? for this
+    config = true,
   },
 
   {
@@ -54,12 +26,28 @@ local plugings = {
   },
 
   {
-    "iamcco/markdown-preview.nvim",
-    ft = "markdown",
+    "mfussenegger/nvim-dap",
+    init = function()
+      require("core.utils").load_mappings("dap")
+    end
+  },
+
+  {
+    "neovim/nvim-lspconfig",
     config = function()
-      vim.fn["mkdp#util#install"]()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
     end,
   },
 
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = "go",
+    opts = function()
+      return require "custom.configs.null-ls"
+    end,
+  },
+
+  { import = "custom.configs.go.plugins", }
 }
-return plugings
+return plugins

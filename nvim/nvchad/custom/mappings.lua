@@ -1,19 +1,23 @@
----@type MappingsTable
 local M = {}
 
-M.general = {
+M.dap = {
+  plugin = true,
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<leader>sx"] = {
-      function()
-        require("telescope.builtin").resume()
+    ["<leader>db"] = {
+      "<cmd> DapToggleBreakpoint <CR>",
+      "Add breakpoint at line"
+    },
+    ["<leader>dus"] = {
+      function ()
+        local widgets = require('dap.ui.widgets');
+        local sidebar = widgets.sidebar(widgets.scopes);
+        sidebar.open();
       end,
-      "resume telescope",
-      opts = { noremap = true, silent = true }
+      "Open debugging sidebar"
     }
-  },
+  }
 }
 
--- more keybinds!
+for k,v in pairs(require("custom.configs.go.mappings")) do M[k] = v end
 
 return M
