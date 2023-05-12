@@ -1,5 +1,10 @@
 local plugins = {
   {
+    "nvim-tree/nvim-tree.lua",
+    opts = require("custom.configs.nvimtree"),
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = require("custom.configs.treesitter").ensure_installed
@@ -11,12 +16,6 @@ local plugins = {
     opts = {
       ensure_installed = require("custom.configs.mason").ensure_installed
     },
-  },
-
-  {
-    "folke/trouble.nvim",
-    cmd = {"Trouble", "TroubleToggle"},
-    config = true,
   },
 
   {
@@ -48,6 +47,20 @@ local plugins = {
     end,
   },
 
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = require("custom.configs.gitsigns").opts
+  },
+
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = require("custom.configs.which-key").opts
+  },
+
+  { import = "custom.configs.nvim-spectre", },
+  { import = "custom.configs.trouble", },
+  { import = "custom.configs.todo-comments", },
   { import = "custom.configs.go.plugins", },
   { import = "custom.configs.markdown.plugins", }
 }
