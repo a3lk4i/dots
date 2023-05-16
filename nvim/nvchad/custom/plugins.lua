@@ -24,12 +24,7 @@ local plugins = {
     config = true,
   },
 
-  {
-    "mfussenegger/nvim-dap",
-    init = function()
-      require("core.utils").load_mappings("dap")
-    end
-  },
+  { import = "custom.configs.nvim-dap", },
 
   {
     "neovim/nvim-lspconfig",

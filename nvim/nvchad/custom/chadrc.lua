@@ -1,6 +1,6 @@
 ---@type ChadrcConfig 
- local M = {}
- M.ui = {
+local M = {}
+M.ui = {
   theme = "catppuccin",
   theme_toggle = {"catppuccin", "blossom_light"},
 
@@ -17,6 +17,7 @@
     end
   }
 }
- M.plugins = "custom.plugins"
- M.mappings = require "custom.mappings"
- return M
+M.plugins = "custom.plugins"
+M.mappings = require "custom.mappings"
+M.icons = require "custom.icons"
+return M
