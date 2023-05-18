@@ -6,7 +6,6 @@ return {
       return {
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
         sources = {
-          nls.builtins.formatting.prettierd,
           -- aws cfn
           nls.builtins.diagnostics.cfn_lint,
           -- proto | buf.build

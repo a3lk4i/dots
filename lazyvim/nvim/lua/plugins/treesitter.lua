@@ -11,6 +11,7 @@ return {
         "luap",
         "markdown",
         "markdown_inline",
+        "proto",
         "python",
         "query",
         "regex",

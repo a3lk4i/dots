@@ -1,4 +1,16 @@
-local util = require("util")
+-- Insert values into a list if they don't already exist
+---@param tbl string[]
+---@param vals string|string[]
+local function list_insert_unique(tbl, vals)
+  if type(vals) ~= "table" then
+    vals = { vals }
+  end
+  for _, val in ipairs(vals) do
+    if not vim.tbl_contains(tbl, val) then
+      table.insert(tbl, val)
+    end
+  end
+end
 
 return {
 
@@ -7,7 +19,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
-        util.list_insert_unique(opts.ensure_installed, { "go", "gomod", "gosum", "gowork" })
+        list_insert_unique(opts.ensure_installed, { "go", "gomod", "gosum", "gowork" })
       end
     end,
   },
@@ -17,7 +29,7 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
-        util.list_insert_unique(opts.ensure_installed, "goimports-reviser")
+        list_insert_unique(opts.ensure_installed, "goimports-reviser")
       end
     end,
   },
@@ -26,7 +38,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
-        util.list_insert_unique(opts.ensure_installed, { "gomodifytags", "gofumpt", "iferr", "impl" })
+        list_insert_unique(opts.ensure_installed, { "gomodifytags", "gofumpt", "iferr", "impl" })
       end
     end,
   },
@@ -39,7 +51,7 @@ return {
         "jay-babu/mason-nvim-dap.nvim",
         opts = function(_, opts)
           if type(opts.ensure_installed) == "table" then
-            util.list_insert_unique(opts.ensure_installed, "delve")
+            list_insert_unique(opts.ensure_installed, "delve")
           end
         end,
       },
@@ -115,25 +127,5 @@ return {
         end,
       },
     },
-  },
-
-  -- Add go.nvim
-  {
-    "ray-x/go.nvim",
-    dependencies = {
-      "ray-x/guihua.lua",
-      "neovim/nvim-lspconfig",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = true,
-    event = "CmdlineEnter",
-    ft = { "go", "gomod", "gosum", "gowork" },
-  },
-
-  -- Add gopher.nvim
-  {
-    "olexsmir/gopher.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
-    config = true,
   },
 }
