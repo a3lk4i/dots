@@ -11,3 +11,4 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("a3lk4i.plugins")
+require("a3lk4i.config.lsp")

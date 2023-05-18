@@ -22,12 +22,11 @@ return {
         lualine_b = { "branch" },
         lualine_c = {
           {
-            "diagnostics",
+            "diff",
             symbols = {
-              error = icons.diagnostics.Error,
-              warn = icons.diagnostics.Warn,
-              info = icons.diagnostics.Info,
-              hint = icons.diagnostics.Hint,
+              added = icons.git.added,
+              modified = icons.git.modified,
+              removed = icons.git.removed,
             },
           },
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
@@ -59,13 +58,14 @@ return {
           },
           { require("lazy.status").updates, cond = require("lazy.status").has_updates, color = fg("Special") },
           {
-            "diff",
+            "diagnostics",
             symbols = {
-              added = icons.git.added,
-              modified = icons.git.modified,
-              removed = icons.git.removed,
+              error = icons.diagnostics.Error,
+              warn = icons.diagnostics.Warn,
+              info = icons.diagnostics.Info,
+              hint = icons.diagnostics.Hint,
             },
-          },
+          }, 
         },
         lualine_y = {},
         lualine_z = {
