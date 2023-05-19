@@ -1,1 +1,4 @@
-return { "akinsho/bufferline.nvim", enabled = false }
+return {
+  { "akinsho/bufferline.nvim", enabled = false },
+  { "echasnovski/mini.animate", enabled = false },
+}

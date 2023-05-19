@@ -4,6 +4,9 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = {
         "bash",
+        "git_config",
+        "gitcommit",
+        "gitignore",
         "html",
         "json",
         "lua",
@@ -15,6 +18,7 @@ return {
         "python",
         "query",
         "regex",
+        "toml",
         "vim",
         "vimdoc",
         "yaml",
