@@ -29,16 +29,10 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
-        list_insert_unique(opts.ensure_installed, "goimports-reviser")
-      end
-    end,
-  },
-
-  {
-    "jay-babu/mason-null-ls.nvim",
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        list_insert_unique(opts.ensure_installed, { "gomodifytags", "gofumpt", "iferr", "impl" })
+        list_insert_unique(
+          opts.ensure_installed,
+          { "gopls", "gomodifytags", "gofumpt", "goimports-reviser", "iferr", "impl" }
+        )
       end
     end,
   },

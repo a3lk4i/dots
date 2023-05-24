@@ -8,6 +8,9 @@ return {
         sources = {
           -- aws cfn
           nls.builtins.diagnostics.cfn_lint,
+          -- go
+          nls.builtins.code_actions.gomodifytags,
+          nls.builtins.formatting.goimports_reviser,
           -- proto | buf.build
           nls.builtins.diagnostics.buf,
           nls.builtins.formatting.buf,
