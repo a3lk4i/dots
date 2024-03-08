@@ -3,11 +3,11 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "biome",
         "buf",
         "buf-language-server",
         "cfn-lint",
         "prettierd",
-        "rome",
         "ruff",
         "shfmt",
         "stylua",

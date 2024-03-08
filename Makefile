@@ -3,8 +3,8 @@ all: clean sync
 sync:
 	mkdir -p ~/.config/alacritty
 
-	[ -f ~/.config/alacritty/alacritty.yml ] || ln -s $(PWD)/alacritty.yml ~/.config/alacritty/alacritty.yml
-	[ -f ~/.config/alacritty/color.yml ] || ln -s $(PWD)/color.yml ~/.config/alacritty/color.yml
+	[ -f ~/.config/alacritty/alacritty.toml ] || ln -s $(PWD)/alacritty.toml ~/.config/alacritty/alacritty.toml
+	[ -f ~/.config/alacritty/color.toml] || ln -s $(PWD)/color.toml ~/.config/alacritty/color.toml
 	[ -f ~/.zshrc ] || ln -s $(PWD)/.zshrc ~/.zshrc
 	[ -f ~/.tigrc ] || ln -s $(PWD)/tigrc ~/.tigrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
@@ -17,8 +17,8 @@ sync:
 
 clean:
 	rm -f ~/.zshrc
-	rm -f ~/.config/alacritty/alacritty.yml
-	rm -f ~/.config/alacritty/color.yml
+	rm -f ~/.config/alacritty/alacritty.toml
+	rm -f ~/.config/alacritty/color.toml
 	rm -f ~/.tigrc
 	rm -f ~/.gitconfig
 	rm -f ~/.agignore
