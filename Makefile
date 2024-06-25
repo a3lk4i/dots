@@ -1,24 +1,20 @@
 all: clean sync
 
 sync:
-	mkdir -p ~/.config/alacritty
+	mkdir -p ~/.config/nushell
 
-	[ -f ~/.config/alacritty/alacritty.toml ] || ln -s $(PWD)/alacritty.toml ~/.config/alacritty/alacritty.toml
-	[ -f ~/.config/alacritty/color.toml] || ln -s $(PWD)/color.toml ~/.config/alacritty/color.toml
-	[ -f ~/.zshrc ] || ln -s $(PWD)/.zshrc ~/.zshrc
+	[ -f ~/.wezterm.lua ] || ln -s $(PWD)/wezterm.lua ~/.wezterm.lua
+	[ -f ~/.config/nushell/env.nu ] || ln -s $(PWD)/env.nu ~/.config/nushell/env.nu
+	[ -f ~/.config/nushell/config.nu ] || ln -s $(PWD)/config.nu ~/.config/nushell/config.nu
 	[ -f ~/.tigrc ] || ln -s $(PWD)/tigrc ~/.tigrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
 	[ -f ~/.agignore ] || ln -s $(PWD)/agignore ~/.agignore
-	# [-f ~/.tmux.conf] || ln -s $(PWD)/tmuxconf ~/.tmux.conf
-	[-f ~/.config/nvim ] || ln -s $(PWD)/lazyvim/nvim ~/.config/nvim
-
-	# don't show last login message
-	touch ~/.hushlogin
+	[ -f ~/.config/nvim ] || ln -s $(PWD)/lazyvim/nvim ~/.config/nvim
 
 clean:
-	rm -f ~/.zshrc
-	rm -f ~/.config/alacritty/alacritty.toml
-	rm -f ~/.config/alacritty/color.toml
+	rm -f ~/.wezterm.lua
+	rm -rf ~/.config/nushell/env.nu
+	rm -rf ~/.config/nushell/config.nu
 	rm -f ~/.tigrc
 	rm -f ~/.gitconfig
 	rm -f ~/.agignore
