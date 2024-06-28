@@ -4,6 +4,9 @@ return {
         "folke/todo-comments.nvim",
         event = "VimEnter",
         dependencies = { "nvim-lua/plenary.nvim" },
-        opts = { signs = false },
+        config = function()
+            require("todo-comments").setup({ signs = false })
+            vim.keymap.set("n", "<leader>st", "<Cmd>TodoTelescope<CR>", { desc = "search [T]ODOs" })
+        end,
     },
 }

@@ -15,7 +15,7 @@ config.set_environment_variables = {
 -- UI stuff
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
-config.color_scheme = "Gruvbox Dark (Gogh)"
+config.color_scheme = "Gruvbox Material (Gogh)"
 config.font_size = 18
 config.window_padding = {
     left = 0,
