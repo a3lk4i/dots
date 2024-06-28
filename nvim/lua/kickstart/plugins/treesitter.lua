@@ -20,6 +20,8 @@ return {
                 "markdown",
                 "vim",
                 "vimdoc",
+                "git_config",
+                "gitignore",
 
                 -- protobuf
                 "proto",

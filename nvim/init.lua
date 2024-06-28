@@ -122,8 +122,6 @@ require("lazy").setup({
 
     -- Detect tabstop and shiftwidth automatically
     "tpope/vim-sleuth",
-    -- "gc" to comment visual regions/lines
-    require("kickstart.plugins.comment"),
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     require("kickstart.plugins.gitsigns"),
     -- Useful plugin to show you pending keybinds
@@ -152,13 +150,15 @@ require("lazy").setup({
     require("kickstart.plugins.lint"),
     -- Insert or delete brackets, parens, quotes in pair
     require("kickstart.plugins.autopairs"),
+    -- File tree
+    require("kickstart.plugins.neo-tree"),
 
     -- NOTE: The import below can automatically add your own plugins, configuration, etc
     -- from `lua/custom/plugins/*.lua`. This is the easiest way to modularize your config.
     --
     --  Add your plugins to `lua/custom/plugins/*.lua` to get going.
     --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-    -- { import = 'custom.plugins' },
+    { import = "custom.plugins" },
 }, {
     ui = {
         -- If you are using a Nerd Font: set icons to an empty table which will use the

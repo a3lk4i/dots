@@ -18,23 +18,38 @@ return {
             -- - sr)'  - [S]urround [R]eplace [)] [']
             require("mini.surround").setup()
 
-            -- Simple and easy statusline.
-            --  You could remove this setup call if you don't like it,
-            --  and try some other statusline plugin
-            local statusline = require("mini.statusline")
-            -- set use_icons to true if you have a Nerd Font
-            statusline.setup({ use_icons = vim.g.have_nerd_font })
+            -- Comment helper
+            require("mini.comment").setup()
 
-            -- You can configure sections in the statusline by overriding their
-            -- default behavior. For example, here we set the section for
-            -- cursor location to LINE:COLUMN
-            ---@diagnostic disable-next-line: duplicate-set-field
-            statusline.section_location = function()
-                return "%2l:%-2v"
-            end
-
-            -- ... and there is more!
-            --  Check out: https://github.com/echasnovski/mini.nvim
+            -- Interactive starter
+            -- Set starter footer and refresh after `startuptime` is available
+            vim.api.nvim_create_autocmd("User", {
+                pattern = "LazyVimStarted",
+                callback = function()
+                    local starter = require("mini.starter")
+                    local stats = require("lazy").stats()
+                    local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+                    starter.config.footer = function()
+                        return "󰚥  Loaded plugins: "
+                            .. stats.loaded
+                            .. "/"
+                            .. stats.count
+                            .. "\n󱓞  Startup time: "
+                            .. ms
+                            .. " ms"
+                    end
+                    -- https://github.com/LazyVim/LazyVim/commit/dc66887b57ecdee8d33b5e07ca031288260e2971
+                    vim.cmd([[do VimResized]])
+                end,
+            })
+            local starter = require("mini.starter")
+            starter.setup({
+                items = {
+                    starter.sections.recent_files(10, true),
+                    { section = "Tools", name = "Lazy", action = "Lazy" },
+                    starter.sections.builtin_actions(),
+                },
+            })
         end,
     },
 }

@@ -15,7 +15,24 @@ config.set_environment_variables = {
 -- UI stuff
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
-config.color_scheme = "Gruvbox Dark (Gogh)"
+config.tab_max_width = 30
+config.colors = {
+    tab_bar = {
+        active_tab = {
+            bg_color = "#292522",
+            fg_color = "#e0e0e0",
+            intensity = "Bold",
+        },
+    },
+}
+
+local custom_color_scheme = wezterm.color.get_builtin_schemes()["Gruvbox Material (Gogh)"]
+custom_color_scheme.background = "#292522"
+config.color_schemes = {
+    ["custom"] = custom_color_scheme,
+}
+config.color_scheme = "custom"
+
 config.font_size = 18
 config.window_padding = {
     left = 0,
