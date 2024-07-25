@@ -8,8 +8,9 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- ENV before shell
+local home_path = os.getenv("HOME") or "/home/a3lk4i"
 config.set_environment_variables = {
-    XDG_CONFIG_HOME = "/Users/akavuri/.config",
+    XDG_CONFIG_HOME = home_path .. "/.config",
 }
 
 -- UI stuff
@@ -33,7 +34,7 @@ config.color_schemes = {
 }
 config.color_scheme = "custom"
 
-config.font_size = 18
+config.font_size = 15
 config.window_padding = {
     left = 0,
     right = 0,
