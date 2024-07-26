@@ -1,7 +1,7 @@
 $env.config = ($env.config | upsert render_right_prompt_on_last_line true)
 
 $env.POWERLINE_COMMAND = 'oh-my-posh'
-$env.POSH_THEME = "~/.config/nushell/theme.omp.yaml"
+$env.POSH_THEME = ($env.HOME | append ".config/nushell/theme.omp.yaml" | str join "/")
 $env.PROMPT_INDICATOR = $"(ansi y)$ (ansi reset)"
 
 def posh_cmd_duration [] {
