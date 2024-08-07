@@ -34,12 +34,12 @@ config.color_schemes = {
 }
 config.color_scheme = "custom"
 
-config.font_size = 15
+config.font_size = 14
 config.window_padding = {
-    left = 0,
-    right = 0,
-    top = 0,
-    bottom = 0,
+    left = 10,
+    right = 10,
+    top = 10,
+    bottom = 10,
 }
 
 -- Keybindings
@@ -57,6 +57,16 @@ for i = 1, 8 do
         action = act.ActivateTab(i - 1),
     })
 end
+table.insert(config.keys, {
+    key = "t",
+    mods = "CTRL",
+    action = act.SpawnTab("CurrentPaneDomain"),
+})
+table.insert(config.keys, {
+    key = "w",
+    mods = "CTRL",
+    action = wezterm.action.CloseCurrentTab({ confirm = true }),
+})
 
 -- and finally, return the configuration to wezterm
 return config
