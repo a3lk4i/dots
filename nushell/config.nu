@@ -51,5 +51,7 @@ $env.config = {
     }
 }
 
+alias k = kubectl
+
 source ~/.config/nushell/oh-my-posh.nu
 source ~/.config/nushell/zoxide.nu
