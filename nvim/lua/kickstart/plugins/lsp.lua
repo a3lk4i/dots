@@ -175,7 +175,21 @@ return {
                         },
                     },
                 },
-                -- pyright = {},
+                -- python
+                ruff = {
+                    capabilities = capabilities,
+                    on_attach = function(client, _)
+                        client.server_capabilities.hoverProvider = false
+                    end,
+                },
+                basedpyright = {
+                    settings = {
+                        basedpyright = {
+                            disableOrganizeImports = true,
+                            typeCheckingMode = "off",
+                        },
+                    },
+                },
                 -- rust_analyzer = {},
                 -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
                 --
