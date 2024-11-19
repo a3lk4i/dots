@@ -1,26 +1,27 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
-version: 2
-final_space: true
+
 console_title_template: "{{.Shell}} in {{.Folder}}"
 blocks:
 - type: prompt
   alignment: left
   segments:
-  - type: path
-    style: plain
-    template: " {{ .Path }}"
-    properties:
+  - properties:
       style: folder
+    template: " {{ .Path }}"
+    type: path
+    style: plain
 - type: rprompt
   segments:
-  - type: executiontime
-    style: plain
-    template: " {{ .FormattedMs }} "
-    properties:
-      threshold: 1
-      style: austin
+  - properties:
       always_enabled: true
-  - type: time
+      style: austin
+      threshold: 1
+    template: " {{ .FormattedMs }} "
+    type: executiontime
     style: plain
-    properties:
+  - properties:
       time_format: Jan 2 15:04:05
+    type: time
+    style: plain
+version: 3
+final_space: true
