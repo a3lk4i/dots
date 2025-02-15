@@ -6,7 +6,7 @@ sync:
 	[ -f ~/.wezterm.lua ] || ln -s $(PWD)/wezterm.lua ~/.wezterm.lua
 	[ -f ~/.config/nushell ] || ln -s $(PWD)/nushell/* ~/.config/nushell/
 	[ -f ~/.tigrc ] || ln -s $(PWD)/tigrc ~/.tigrc
-	[ -f ~/.gitconfig ] || ln -s $(PWD)/personal.gitconfig ~/.gitconfig
+	[ -f ~/.gitconfig ] || ln -s $(PWD)/${env}.gitconfig ~/.gitconfig
 	[ -f ~/.agignore ] || ln -s $(PWD)/agignore ~/.agignore
 	[ -f ~/.config/nvim ] || ln -s $(PWD)/nvim ~/.config/nvim
 
