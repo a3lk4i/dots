@@ -184,10 +184,7 @@ return {
                 },
                 basedpyright = {
                     settings = {
-                        basedpyright = {
-                            disableOrganizeImports = true,
-                            typeCheckingMode = "off",
-                        },
+                        basedpyright = {},
                     },
                 },
                 -- rust_analyzer = {},

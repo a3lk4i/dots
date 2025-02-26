@@ -29,6 +29,8 @@ return {
                 lua = { "stylua" },
                 -- protobuf
                 proto = { "buf" },
+                -- python
+                python = { "ruff_organize_imports" },
             },
         },
     },
