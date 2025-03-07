@@ -34,7 +34,7 @@ config.color_schemes = {
 }
 config.color_scheme = "custom"
 
-config.font_size = 12
+config.font_size = 11
 config.window_padding = {
     left = 10,
     right = 10,
