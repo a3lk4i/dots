@@ -21,6 +21,8 @@ return {
                 "vim",
                 "vimdoc",
                 "git_config",
+                "git_rebase",
+                "gitcommit",
                 "gitignore",
 
                 -- protobuf

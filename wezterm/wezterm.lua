@@ -8,10 +8,12 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- ENV before shell
-local home_path = os.getenv("HOME") or "/home/a3lk4i"
+local home_path = os.getenv("HOME") or "/home/a3l"
 config.set_environment_variables = {
     XDG_CONFIG_HOME = home_path .. "/.config",
 }
+
+config.default_prog = { "/home/linuxbrew/.linuxbrew/bin/nu" }
 
 -- UI stuff
 config.tab_bar_at_bottom = true
@@ -27,12 +29,25 @@ config.colors = {
     },
 }
 
-local custom_color_scheme = wezterm.color.get_builtin_schemes()["Gruvbox Material (Gogh)"]
-custom_color_scheme.background = "#292522"
-config.color_schemes = {
-    ["custom"] = custom_color_scheme,
-}
-config.color_scheme = "custom"
+config.color_scheme_dirs = { home_path .. "/.config/wezterm/colors" }
+
+-- wezterm.gui is not available to the mux server, so take care to
+-- do something reasonable when this config is evaluated by the mux
+local function get_appearance()
+    if wezterm.gui then
+        return wezterm.gui.get_appearance()
+    end
+    return "Dark"
+end
+
+local function scheme_for_appearance(appearance)
+    if appearance:find("Dark") then
+        return "melange_dark"
+    else
+        return "melange_light"
+    end
+end
+config.color_scheme = scheme_for_appearance(get_appearance())
 
 config.font_size = 11
 config.window_padding = {
