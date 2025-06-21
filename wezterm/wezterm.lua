@@ -49,7 +49,7 @@ local function scheme_for_appearance(appearance)
 end
 config.color_scheme = scheme_for_appearance(get_appearance())
 
-config.font_size = 11
+config.font_size = 12
 config.window_padding = {
     left = 10,
     right = 10,
