@@ -13,21 +13,16 @@ config.set_environment_variables = {
     XDG_CONFIG_HOME = home_path .. "/.config",
 }
 
-config.default_prog = { "/home/linuxbrew/.linuxbrew/bin/nu" }
+local is_linux = function()
+    return wezterm.target_triple:find("linux") ~= nil
+end
+
+config.default_prog = is_linux() and { "/home/linuxbrew/.linuxbrew/bin/nu" } or { "/opt/homebrew/bin/nu" }
 
 -- UI stuff
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.tab_max_width = 30
-config.colors = {
-    tab_bar = {
-        active_tab = {
-            bg_color = "#292522",
-            fg_color = "#e0e0e0",
-            intensity = "Bold",
-        },
-    },
-}
 
 config.color_scheme_dirs = { home_path .. "/.config/wezterm/colors" }
 
@@ -49,7 +44,7 @@ local function scheme_for_appearance(appearance)
 end
 config.color_scheme = scheme_for_appearance(get_appearance())
 
-config.font_size = 12
+config.font_size = is_linux() and 12 or 15
 config.window_padding = {
     left = 10,
     right = 10,

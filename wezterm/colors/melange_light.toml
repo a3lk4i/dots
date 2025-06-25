@@ -26,3 +26,4 @@ brights = [
   "#3D6568",
   "#54433A"
 ]
+tab_bar = { background = "#D9D3CE", active_tab = { bg_color = "#54433A", fg_color = "#e0e0e0", intensity = "Bold" }}

@@ -30,7 +30,7 @@ return {
                 -- protobuf
                 proto = { "buf" },
                 -- python
-                python = { "ruff_organize_imports" },
+                python = { "ruff_organize_imports", "ruff_fix", "ruff_format" },
             },
         },
     },
