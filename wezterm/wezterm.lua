@@ -6,7 +6,6 @@ local act = wezterm.action
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
-
 -- ENV before shell
 local home_path = os.getenv("HOME") or "/home/a3l"
 config.set_environment_variables = {
