@@ -13,7 +13,7 @@ tab_width = 4
 indent_size = 2
 tab_width = 2
 
-[{*.go,*.go2}]
+[{*.go,*.go2,Makefile}]
 indent_style = tab
 
 [{*.yaml,*.yml}]
