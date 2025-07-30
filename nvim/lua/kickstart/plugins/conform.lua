@@ -31,6 +31,7 @@ return {
                 proto = { "buf" },
                 -- python
                 python = { "ruff_organize_imports", "ruff_fix", "ruff_format" },
+                yaml = { "yamlfmt" },
             },
         },
     },

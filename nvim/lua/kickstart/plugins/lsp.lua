@@ -187,6 +187,42 @@ return {
                         basedpyright = {},
                     },
                 },
+                -- yaml
+                yamlls = {
+                    capabilities = {
+                        textDocument = {
+                            foldingRange = {
+                                dynamicRegistration = false,
+                                lineFoldingOnly = true,
+                            },
+                        },
+                    },
+                    settings = {
+                        redhat = { telemetry = { enabled = false } },
+                        yaml = {
+                            schemaStore = {
+                                enable = true,
+                                url = "https://www.schemastore.org/api/json/catalog.json",
+                            },
+                            format = { enabled = false },
+                            -- enabling this conflicts between Kubernetes resources, kustomization.yaml, and Helmreleases
+                            validate = false,
+                            schemas = {
+                                kubernetes = "*.yaml",
+                                ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+                                ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+                                ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
+                                ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
+                                ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+                                ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "*api*.{yml,yaml}",
+                                ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
+                                ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = "*flow*.{yml,yaml}",
+                                ["https://s3.amazonaws.com/cfn-resource-specifications-us-east-1-prod/schemas/2.15.0/all-spec.json"] = "*aws*.{yml,yaml}",
+                            },
+                        },
+                    },
+                },
+
                 -- rust_analyzer = {},
                 -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
                 --
@@ -228,6 +264,8 @@ return {
                 "stylua", -- Used to format Lua code
                 -- golang
                 "gofumpt",
+                -- yaml
+                "yamlls",
             })
             require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

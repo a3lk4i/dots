@@ -10,5 +10,4 @@ $env.PATH = ( $env.PATH | split row (char esep)
   | uniq # filter so the paths are unique
 )
 
-$env.GOPRIVATE = "github.expedia.biz"
 $env.JAVA_HOME = ($env.HOME | path join Applications android-studio jbr)
