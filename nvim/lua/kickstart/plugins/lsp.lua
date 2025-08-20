@@ -187,6 +187,13 @@ return {
                         basedpyright = {},
                     },
                 },
+                ty = {
+                    settings = {
+                        ty = {
+                            disableLanguageServices = true,
+                        },
+                    },
+                },
                 -- yaml
                 yamlls = {
                     capabilities = {
@@ -264,6 +271,9 @@ return {
                 "stylua", -- Used to format Lua code
                 -- golang
                 "gofumpt",
+                -- python
+                "ruff",
+                "ty",
                 -- yaml
                 "yamlls",
             })

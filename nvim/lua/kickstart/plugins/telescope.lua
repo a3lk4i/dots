@@ -79,7 +79,11 @@ return {
                         "--multiline",
                     },
                 },
-                -- pickers = {}
+                pickers = {
+                    diagnostics = {
+                        previewer = false,
+                    },
+                },
                 extensions = {
                     ["ui-select"] = {
                         require("telescope.themes").get_dropdown(),
