@@ -3,8 +3,6 @@ tap "jandedobbeleer/oh-my-posh"
 tap "cmacrae/formulae"
 tap "ktr0731/evans"
 tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/services"
 
 brew "aria2"
 brew "awscli"
