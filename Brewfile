@@ -47,7 +47,6 @@ brew "wget"
 brew "zoxide"
 
 cask "contexts"
-cask "docker"
 cask "karabiner-elements"
 cask "raycast"
 cask "tableplus"
