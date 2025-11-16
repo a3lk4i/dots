@@ -7,6 +7,7 @@ sync:
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/${env}.gitconfig ~/.gitconfig
 	[ -f ~/.agignore ] || ln -s $(PWD)/agignore ~/.agignore
 	[ -f ~/.config/nvim ] || ln -s $(PWD)/nvim ~/.config/nvim
+	[ -f ~/.config/opencode/opencode.json ] || ln -s $(PWD)/opencode.jsonc ~/.config/opencode/opencode.jsonc
 
 clean:
 	rm -rf ~/.config/wezterm
@@ -16,4 +17,4 @@ clean:
 	rm -f ~/.agignore
 	rm -rf ~/.config/nvim
 
-.PHONY: all clean sync 
+.PHONY: all sync clean

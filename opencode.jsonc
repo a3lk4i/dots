@@ -1,0 +1,10 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    // Theme configuration
+    "theme": "system",
+    "tui": {
+        "scroll_acceleration": {
+            "enabled": true
+        }
+    }
+}

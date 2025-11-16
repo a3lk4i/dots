@@ -11,6 +11,7 @@ $env.PATH = ( $env.PATH | split row (char esep)
 )
 
 $env.JAVA_HOME = ($env.HOME | path join Applications android-studio jbr)
+$env.EDITOR = 'nvim'
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir $"($nu.cache-dir)"
