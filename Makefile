@@ -36,14 +36,13 @@ help:
 # Create all symlinks (idempotent - can run multiple times safely)
 sync:
 	@echo "Setting up dotfiles for environment: $(env)"
-	@mkdir -p $(CONFIG_DIR)/opencode
 	@ln -sfn $(DOTFILES_DIR)/wezterm $(CONFIG_DIR)/wezterm
 	@ln -sfn $(DOTFILES_DIR)/nushell $(CONFIG_DIR)/nushell
 	@ln -sfn $(DOTFILES_DIR)/nvim $(CONFIG_DIR)/nvim
 	@ln -sfn $(DOTFILES_DIR)/tigrc $(HOME)/.tigrc
 	@ln -sfn $(DOTFILES_DIR)/$(env).gitconfig $(HOME)/.gitconfig
 	@ln -sfn $(DOTFILES_DIR)/agignore $(HOME)/.agignore
-	@ln -sfn $(DOTFILES_DIR)/opencode.jsonc $(CONFIG_DIR)/opencode/opencode.jsonc
+	@ln -sfn $(DOTFILES_DIR)/opencode $(CONFIG_DIR)/opencode
 	@echo "✓ Symlinks created successfully"
 
 # Verify current symlink status
@@ -55,7 +54,7 @@ verify:
 	@echo -n "tigrc:    " && ([ -L $(HOME)/.tigrc ] && echo "✓ linked" || echo "✗ missing")
 	@echo -n "gitconfig:" && ([ -L $(HOME)/.gitconfig ] && echo "✓ linked" || echo "✗ missing")
 	@echo -n "agignore: " && ([ -L $(HOME)/.agignore ] && echo "✓ linked" || echo "✗ missing")
-	@echo -n "opencode: " && ([ -L $(CONFIG_DIR)/opencode/opencode.jsonc ] && echo "✓ linked" || echo "✗ missing")
+	@echo -n "opencode: " && ([ -L $(CONFIG_DIR)/opencode] && echo "✓ linked" || echo "✗ missing")
 
 # Remove only symlinks that point to this dotfiles directory (safe)
 clean:
@@ -66,7 +65,7 @@ clean:
 	@[ -L $(HOME)/.tigrc ] && readlink $(HOME)/.tigrc | grep -q "$(DOTFILES_DIR)" && rm -f $(HOME)/.tigrc || true
 	@[ -L $(HOME)/.gitconfig ] && readlink $(HOME)/.gitconfig | grep -q "$(DOTFILES_DIR)" && rm -f $(HOME)/.gitconfig || true
 	@[ -L $(HOME)/.agignore ] && readlink $(HOME)/.agignore | grep -q "$(DOTFILES_DIR)" && rm -f $(HOME)/.agignore || true
-	@[ -L $(CONFIG_DIR)/opencode/opencode.jsonc ] && readlink $(CONFIG_DIR)/opencode/opencode.jsonc | grep -q "$(DOTFILES_DIR)" && rm -f $(CONFIG_DIR)/opencode/opencode.jsonc || true
+	@[ -L $(CONFIG_DIR)/opencode ] && readlink $(CONFIG_DIR)/opencode | grep -q "$(DOTFILES_DIR)" && rm -f $(CONFIG_DIR)/opencode || true
 	@echo "✓ Cleanup complete"
 
 # Force remove all symlinks (use with caution)
