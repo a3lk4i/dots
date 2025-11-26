@@ -3,12 +3,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        dependencies = {
-            -- NOTE: additional parsers
-            --
-            -- nushell nu
-            { "nushell/tree-sitter-nu" },
-        },
+        dependencies = {},
         opts = {
             ensure_installed = {
                 "bash",
