@@ -1,6 +1,6 @@
 # dots
 
-Personal dotfiles for Neovim, WezTerm, Nushell, and Git configurations.
+Personal dotfiles for Neovim, WezTerm, Nushell, Opencode and Git configurations.
 
 ## Quick Start
 
@@ -37,9 +37,9 @@ env=personal make clean
 - **Neovim** → `~/.config/nvim`
 - **WezTerm** → `~/.config/wezterm`
 - **Nushell** → `~/.config/nushell`
+- **Opencode** → `~/.config/opencode`
 - **Git config** → `~/.gitconfig` (personal.gitconfig or work.gitconfig)
 - **Tig** → `~/.tigrc`
 - **Ag** → `~/.agignore`
-- **OpenCode** → `~/.config/opencode/opencode.jsonc`
 
 All configurations are symlinked, so changes to this repository immediately apply.
