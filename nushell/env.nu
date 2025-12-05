@@ -9,7 +9,6 @@ $env.PATH = ( $env.PATH | split row (char esep)
   | append /home/linuxbrew/.linuxbrew/bin/
   | uniq # filter so the paths are unique
 )
-
 $env.JAVA_HOME = ($env.HOME | path join Applications android-studio jbr)
 $env.EDITOR = 'nvim'
 

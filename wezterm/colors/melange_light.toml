@@ -1,11 +1,11 @@
 [colors]
-foreground    = "#54433A"
-background    = "#F1F1F1"
-cursor_bg     = "#54433A"
+foreground = "#54433A"
+background = "#F1F1F1"
+cursor_bg = "#54433A"
 cursor_border = "#54433A"
-cursor_fg     = "#F1F1F1"
-selection_bg  = "#D9D3CE"
-selection_fg  = "#54433A"
+cursor_fg = "#F1F1F1"
+selection_bg = "#D9D3CE"
+selection_fg = "#54433A"
 ansi = [
   "#E9E1DB",
   "#C77B8B",
@@ -26,4 +26,4 @@ brights = [
   "#3D6568",
   "#54433A"
 ]
-tab_bar = {background="#D9D3CE", active_tab={bg_color="#54433A", fg_color="#D9D3CE", intensity="Bold"}, inactive_tab={bg_color="#D9D3CE", fg_color="#54433A"}, new_tab={fg_color="#54433A", bg_color="#D9D3CE"}}
+tab_bar = { background = "#D9D3CE", active_tab = { bg_color = "#54433A", fg_color = "#D9D3CE", intensity = "Bold" }, inactive_tab = { bg_color = "#D9D3CE", fg_color = "#54433A" }, new_tab = { fg_color = "#54433A", bg_color = "#D9D3CE" } }
