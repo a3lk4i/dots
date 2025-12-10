@@ -37,6 +37,7 @@ help:
 sync:
 	@echo "Setting up dotfiles for environment: $(env)"
 	@ln -sfn $(DOTFILES_DIR)/wezterm $(CONFIG_DIR)/wezterm
+	@ln -sfn $(DOTFILES_DIR)/starship.toml $(CONFIG_DIR)/starship.toml
 	@ln -sfn $(DOTFILES_DIR)/nushell $(CONFIG_DIR)/nushell
 	@ln -sfn $(DOTFILES_DIR)/nvim $(CONFIG_DIR)/nvim
 	@ln -sfn $(DOTFILES_DIR)/tigrc $(HOME)/.tigrc
@@ -49,6 +50,7 @@ sync:
 verify:
 	@echo "Checking dotfiles symlinks..."
 	@echo -n "wezterm:  " && ([ -L $(CONFIG_DIR)/wezterm ] && echo "✓ linked" || echo "✗ missing")
+	@echo -n "starship:" && ([ -L $(CONFIG_DIR)/starship.toml ] && echo "✓ linked" || echo "✗ missing")
 	@echo -n "nushell:  " && ([ -L $(CONFIG_DIR)/nushell ] && echo "✓ linked" || echo "✗ missing")
 	@echo -n "nvim:     " && ([ -L $(CONFIG_DIR)/nvim ] && echo "✓ linked" || echo "✗ missing")
 	@echo -n "tigrc:    " && ([ -L $(HOME)/.tigrc ] && echo "✓ linked" || echo "✗ missing")
@@ -60,6 +62,7 @@ verify:
 clean:
 	@echo "Removing dotfiles symlinks..."
 	@[ -L $(CONFIG_DIR)/wezterm ] && readlink $(CONFIG_DIR)/wezterm | grep -q "$(DOTFILES_DIR)" && rm -f $(CONFIG_DIR)/wezterm || true
+	@[ -L $(CONFIG_DIR)/starship.toml ] && readlink $(CONFIG_DIR)/starship.toml | grep -q "$(DOTFILES_DIR)" && rm -f $(CONFIG_DIR)/starship.toml || true
 	@[ -L $(CONFIG_DIR)/nushell ] && readlink $(CONFIG_DIR)/nushell | grep -q "$(DOTFILES_DIR)" && rm -f $(CONFIG_DIR)/nushell || true
 	@[ -L $(CONFIG_DIR)/nvim ] && readlink $(CONFIG_DIR)/nvim | grep -q "$(DOTFILES_DIR)" && rm -f $(CONFIG_DIR)/nvim || true
 	@[ -L $(HOME)/.tigrc ] && readlink $(HOME)/.tigrc | grep -q "$(DOTFILES_DIR)" && rm -f $(HOME)/.tigrc || true
