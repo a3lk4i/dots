@@ -78,3 +78,4 @@ require("autocmds")
 vim.schedule(function()
   require("mappings")
 end)
+vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, "/") .. ":" .. vim.env.PATH
